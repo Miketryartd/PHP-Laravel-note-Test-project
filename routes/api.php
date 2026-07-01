@@ -5,9 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\SearchController;
 Route::middleware("api.auth")->group(function(){
     Route::post('/register', [UserController::class, 'Register'])->name('register');
     Route::post('login', [UserController::class, 'Login'])->name('login');
+    Route::post('/search', [SearchController::class, 'Search'])->name('search');
    
 });
 
